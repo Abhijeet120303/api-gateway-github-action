@@ -1,0 +1,14 @@
+name: Run API_GATEWAY Jar
+
+on:
+  push:
+    branches:
+      -  master
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: api-gateway
+        run: mvn clean install
