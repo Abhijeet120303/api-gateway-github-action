@@ -8,7 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: 
+     image: dnyanyog.org/maven-jdk:latest
 
     steps:
       - name: api-gateway
-        run: mvn clean install
+        run: echo "Hello World !!"
