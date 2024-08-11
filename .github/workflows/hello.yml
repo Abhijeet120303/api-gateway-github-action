@@ -6,7 +6,7 @@ on:
       -  main
 
 jobs:
-  run:
+  api-gateway-run:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +17,14 @@ jobs:
           distribution: "temurin"
           java-version: "21"
           
+      - name: Check java version
+        run: java --version
+          
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Check code is checkout or not
+        run: ls -ltr
   
       - name: Run Service
         run: mvn clean install 
