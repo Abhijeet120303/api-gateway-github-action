@@ -3,7 +3,7 @@ name: Run API_GATEWAY Jar
 on:
   push:
     branches:
-      -  master
+      -  main
 
 jobs:
   run:
