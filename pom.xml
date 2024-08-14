@@ -41,6 +41,26 @@
 			</plugin>
 
 			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.44.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<images>
+						<image>
+							<name>dnyanyog.org/${project.artifactId}:latest</name>
+							<build>
+								<dockerFile>${project.basedir}/dockerfile</dockerFile>
+								<args>
+									<jarName>${project.artifactId}-latest</jarName>
+								</args>
+							</build>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>org.sonatype.ossindex.maven</groupId>
 				<artifactId>ossindex-maven-plugin</artifactId>
 				<version>3.2.0</version> <!-- Add the version here -->
