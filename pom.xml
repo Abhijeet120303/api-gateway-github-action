@@ -61,14 +61,19 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.owasp</groupId>
-				<artifactId>dependency-check-maven</artifactId>
+				<groupId>org.sonatype.ossindex.maven</groupId>
+				<artifactId>ossindex-maven-plugin</artifactId>
+				<version>3.2.0</version> <!-- Add the version here -->
+				<configuration>
+					<reportFile>${project.build.directory}/audit-report.json</reportFile>
+					<!--fail>true</fail-->
+				</configuration>
 				<executions>
 					<execution>
+						<id>audit-dependencies</id>
 						<phase>validate</phase>
-
 						<goals>
-							<goal>check</goal>
+							<goal>audit</goal>
 						</goals>
 					</execution>
 				</executions>
