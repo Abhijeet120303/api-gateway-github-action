@@ -38,6 +38,6 @@ jobs:
         run: mvn org.owasp:dependency-check-maven:check
 
       - name: Build Code And Create docker image
-        run: mvn clean install 
+        run: mvn clean install docker:build
         
       
