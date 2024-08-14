@@ -28,3 +28,6 @@ jobs:
   
       - name: Run Service
         run: mvn clean install 
+
+      - name: Perfrom Goggle java formatter
+        run: mvn com.spotify.fmt:fmt-maven-plugin:check
