@@ -26,8 +26,13 @@ jobs:
       - name: Check code is checkout or not
         run: ls -ltr
 
-      - name: Run Service
-        run: mvn clean install 
+      - name: OSS Scan
+        run: mvn ossindex:audit
         
       - name: Perfrom Goggle java formatter
         run: mvn com.spotify.fmt:fmt-maven-plugin:check
+
+      - name: Run Service
+        run: mvn clean install 
+        
+      
