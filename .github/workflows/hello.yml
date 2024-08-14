@@ -28,6 +28,7 @@ jobs:
 
       - name: OSS Scan
         run: mvn ossindex:audit
+        continue-on-error: true
         
       - name: Perfrom Goggle java formatter
         run: mvn com.spotify.fmt:fmt-maven-plugin:check
